@@ -1,0 +1,12 @@
+services:
+  postgres:
+    image: 'postgres:latest'
+    container_name: 'netodb'
+    environment:
+      - 'POSTGRES_DB=test'
+      - 'POSTGRES_PASSWORD=secret'
+      - 'POSTGRES_USER=nox'
+    volumes:
+      - './pg_data:/var/lib/postgresql/data'
+    ports:
+      - "5432:5432"
