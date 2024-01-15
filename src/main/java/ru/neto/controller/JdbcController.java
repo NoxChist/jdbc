@@ -11,13 +11,13 @@ import java.util.List;
 @RestController
 public class JdbcController {
     private final DbRepository repository;
-    public JdbcController(DbRepository repository){
-        this.repository=repository;
+
+    public JdbcController(DbRepository repository) {
+        this.repository = repository;
     }
 
     @GetMapping("/products/fetch-product")
-    public List<String> getProductName(@RequestParam("name")String name) throws SQLException {
-        var t = repository.getProductName(name);
-        return t;
+    public List<String> getProductName(@RequestParam("name") String name) throws SQLException {
+        return repository.getProductName(name);
     }
 }

@@ -1,4 +1,5 @@
 package ru.neto.model;
+
 public class Order {
     private int id;
     private String date;
